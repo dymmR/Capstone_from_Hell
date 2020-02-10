@@ -8,23 +8,16 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import java.util.*
-
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothServerSocket
-import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothSocket
 import android.util.Log
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
-import android.Manifest
-import android.widget.EditText
-import android.view.View
-import android.content.pm.PackageManager
+
 
 class MainActivity : AppCompatActivity() {
-    val textview=findViewById<TextView>(R.id.textView)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        BluetoothServerController(this, textview).start()
+        BluetoothServerController(this, textView).start()
 
     }
 
